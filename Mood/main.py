@@ -27,8 +27,8 @@ app.config['SECRET_KEY'] = 'mysecretkey'  # Secret key for sessions
 db_config = {
     'host': 'localhost',
     'user': 'root',  # Replace with your MySQL username
-    'password': 'vidhi2312',  # Replace with your MySQL password
-    'database': 'MoodUsers',
+    'password': 'password',  # Replace with your MySQL password
+    'database': 'Database_Namw',
     'auth_plugin': 'mysql_native_password'
 }
 
@@ -137,12 +137,12 @@ def logout():
     return redirect(url_for('index'))
 
 # Spotify API Configuration
-CLIENT_ID = "9fb06779a1f140a8b77f6404f8a1567e"
-CLIENT_SECRET = "705e1c64c8d34adda154234b9c53e3e7"
+CLIENT_ID = "Spotify_Key"
+CLIENT_SECRET = "Client_Secret"
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET))
 
 # YouTube API Configuration
-YOUTUBE_API_KEY = 'AIzaSyBTzOAharfbsBe5st1Q9VFryZeIubYeUvE'
+YOUTUBE_API_KEY = 'Youtube_API_Key'
 youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
 
 # Function to detect emotion from the image
