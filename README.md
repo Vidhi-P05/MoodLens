@@ -17,12 +17,10 @@ MoodLens is an innovative system designed to dynamically customize social media 
 ## 🛠️ **Technologies Used**  
 - **Programming Languages**: Python  
 - **Emotion Detection**: OpenCV, Deep Learning (e.g., TensorFlow, Keras)  
-- **Frontend**: HTML, CSS, JavaScript  
+- **Frontend**: HTML, CSS  
 - **Backend**: Flask  
 - **APIs**: SerpAPI, Google APIs  
-- **Database**: SQLite or Firebase (depending on implementation)  
-- **Data Visualization**: Matplotlib, Plotly  
-
+- **Database**: MySQL
 ---
 
 
