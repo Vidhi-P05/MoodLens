@@ -1,0 +1,139 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1d1f27, #313345);
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+header:hover {
+    background: linear-gradient(90deg, #fcb045, #fd1d1d, #833ab4);
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #2b2e3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intro Section */
+.intro {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f1f1f1;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #fcb045, #fd1d1d, #833ab4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #282a36;
+    color: #f1f1f1;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+}

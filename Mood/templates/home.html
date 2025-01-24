@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Mood Detection</title>
+    <script>
+        // Function to send a frame to the server for mood detection
+        async function detectMood() {
+            const video = document.querySelector("#video-feed");
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+
+            // Draw the current video frame onto the canvas
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convert the canvas to a blob (image format)
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
+
+            // Send the frame to the server
+            const formData = new FormData();
+            formData.append("file", blob, "frame.jpg");
+
+            fetch("/home", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error(data.error);
+                } else {
+                    // Update the mood and recommendations dynamically
+                    document.querySelector("#mood").textContent = "Mood: " + data.mood;
+
+                    // Update Spotify recommendations
+                    const spotifyList = document.querySelector("#spotify-recommendations");
+                    spotifyList.innerHTML = "";
+                    data.spotify.forEach(track => {
+                        const listItem = document.createElement("li");
+                        listItem.innerHTML = `<a href="${track.url}" target="_blank">${track.name} - ${track.artist}</a>`;
+                        spotifyList.appendChild(listItem);
+                    });
+
+                    // Update YouTube recommendations
+                    const youtubeList = document.querySelector("#youtube-recommendations");
+                    youtubeList.innerHTML = "";
+                    data.youtube.forEach(video => {
+                        const listItem = document.createElement("li");
+                        listItem.innerHTML = `<a href="${video.url}" target="_blank">${video.title}</a>`;
+                        youtubeList.appendChild(listItem);
+                    });
+
+                    // Update Instagram recommendations
+                    const instagramList = document.querySelector("#instagram-recommendations");
+                    instagramList.innerHTML = "";
+                    data.instagram.forEach(post => {
+                        const listItem = document.createElement("li");
+                        listItem.innerHTML = `<a href="${post.url}" target="_blank">${post.caption}</a>`;
+                        instagramList.appendChild(listItem);
+                    });
+                }
+            })
+            .catch(error => console.error("Error detecting mood:", error));
+        }
+
+        // Periodically send frames for mood detection
+        setInterval(detectMood, 5000); // Send a frame every 5 seconds
+    </script>
+</head>
+<body>
+    <header>Welcome to Mood Detection</header>
+
+    <!-- Display the video feed -->
+    <div>
+        <video id="video-feed" autoplay playsinline muted style="width: 80%; border: 2px solid black;"></video>
+    </div>
+
+    <!-- Display detected mood -->
+    <h2 id="mood">Mood: Detecting...</h2>
+
+    <!-- Display recommendations -->
+    <div>
+        <h3>Spotify Recommendations</h3>
+        <ul id="spotify-recommendations"></ul>
+
+        <h3>YouTube Recommendations</h3>
+        <ul id="youtube-recommendations"></ul>
+
+        <h3>Instagram Recommendations</h3>
+        <ul id="instagram-recommendations"></ul>
+    </div>
+
+    <script>
+        // Start the webcam feed
+        const video = document.querySelector("#video-feed");
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                })
+                .catch(err => {
+                    console.error("Error accessing webcam: ", err);
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1d1f27, #313345);
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 2rem;
+}/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1d1f27, #313345);
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #2b2e3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+/* Animation for container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Video Feed Container */
+#video-feed {
+    width: 80%;
+    border: 2px solid #3b3f54;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+/* Mood Text */
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f1f1f1;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Recommendations Section */
+div {
+    width: 80%;
+    max-width: 900px;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #2b2e3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #f1f1f1;
+    text-align: center;
+}
+
+/* List Styling for Recommendations */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+ul li {
+    background: #1e202a;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid #3b3f54;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+ul li a {
+    color: #fcb045;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+ul li a:hover {
+    color: #fd1d1d;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: hidden;
+}
+
+input {
+    font-size: 1.1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #1e202a;
+    color: #f1f1f1;
+    border: 1px solid #3b3f54;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+input:focus {
+    border-color: #fd1d1d;
+    box-shadow: 0 4px 10px rgba(253, 29, 29, 0.4);
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #fcb045, #fd1d1d, #833ab4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Links Styling */
+.signup-link, .login-link {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.signup-link a, .login-link a {
+    color: #fd1d1d;
+    text-decoration: none;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.8rem;
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    #video-feed {
+        width: 100%;
+    }
+
+    div {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    ul li {
+        padding: 0.8rem;
+    }
+
+    ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #2b2e3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animation for container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Video Feed Container */
+#video-feed {
+    width: 80%;
+    border: 2px solid #3b3f54;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+}
+
+/* Mood Text */
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f1f1f1;
+    margin-top: 2rem;
+}
+
+/* Recommendations Section */
+div {
+    width: 80%;
+    max-width: 900px;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #2b2e3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #f1f1f1;
+}
+
+/* List Styling for Recommendations */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+ul li {
+    background: #1e202a;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid #3b3f54;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+ul li a {
+    color: #fcb045;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #fd1d1d;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input {
+    font-size: 1.1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #1e202a;
+    color: #f1f1f1;
+    border: 1px solid #3b3f54;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #fd1d1d;
+    box-shadow: 0 4px 10px rgba(253, 29, 29, 0.4);
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #fcb045, #fd1d1d, #833ab4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Links Styling */
+.signup-link, .login-link {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 1rem;
+}
+
+.signup-link a, .login-link a {
+    color: #fd1d1d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.8rem;
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    #video-feed {
+        width: 100%;
+    }
+
+    div {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    ul li {
+        padding: 0.8rem;
+    }
+
+    ul li a {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,118 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1d1f27, #313345);
+    color: #f1f1f1;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+}
+
+/* Container Styling */
+.container {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: #2b2e3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animation for container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input {
+    font-size: 1.1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #1e202a;
+    color: #f1f1f1;
+    border: 1px solid #3b3f54;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #fd1d1d;
+    box-shadow: 0 4px 10px rgba(253, 29, 29, 0.4);
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #fcb045, #fd1d1d, #833ab4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Links Styling */
+.signup-link, .login-link {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 1rem;
+}
+
+.signup-link a, .login-link a {
+    color: #fd1d1d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
